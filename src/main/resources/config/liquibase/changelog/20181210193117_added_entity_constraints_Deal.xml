@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Deal.
+    -->
+    <changeSet id="20181210193117-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="syndication_team_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_syndication_team_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_syndication_team"/>
+
+        <addForeignKeyConstraint baseColumnNames="deal_status_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_deal_status_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_deal_status"/>
+
+        <addForeignKeyConstraint baseColumnNames="origination_team_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_origination_team_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_origination_team"/>
+
+        <addForeignKeyConstraint baseColumnNames="recourse_to_client_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_recourse_to_client_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_recourse_to_client"/>
+
+        <addForeignKeyConstraint baseColumnNames="line_of_business_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_line_of_business_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_line_of_business"/>
+
+        <addForeignKeyConstraint baseColumnNames="rating_crr_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_rating_crr_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_crr"/>
+
+        <addForeignKeyConstraint baseColumnNames="rating_moodys_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_rating_moodys_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_moodys"/>
+
+        <addForeignKeyConstraint baseColumnNames="ratingsandpid_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_ratingsandpid_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_s_and_p"/>
+
+        <addForeignKeyConstraint baseColumnNames="rating_fitch_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_rating_fitch_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_fitch"/>
+
+        <addForeignKeyConstraint baseColumnNames="country_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_country_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_country"/>
+
+        <addForeignKeyConstraint baseColumnNames="pra_sector_id_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_pra_sector_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_pra_sector"/>
+
+        <addForeignKeyConstraint baseColumnNames="tranche_id"
+                                 baseTableName="deal"
+                                 constraintName="fk_deal_tranche_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tranche"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,195 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="deal">
+            <h2><span>Deal</span> {{deal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Deal Id</span></dt>
+                <dd>
+                    <span>{{deal.dealId}}</span>
+                </dd>
+                <dt><span>Project Name</span></dt>
+                <dd>
+                    <span>{{deal.projectName}}</span>
+                </dd>
+                <dt><span>Client Sponsor</span></dt>
+                <dd>
+                    <span>{{deal.clientSponsor}}</span>
+                </dd>
+                <dt><span>Target Asset</span></dt>
+                <dd>
+                    <span>{{deal.targetAsset}}</span>
+                </dd>
+                <dt><span>Syndicate Owner</span></dt>
+                <dd>
+                    <span>{{deal.syndicateOwner}}</span>
+                </dd>
+                <dt><span>Deal Pipeline Id</span></dt>
+                <dd>
+                    <span>{{deal.dealPipelineId}}</span>
+                </dd>
+                <dt><span>Origination Contact</span></dt>
+                <dd>
+                    <span>{{deal.originationContact}}</span>
+                </dd>
+                <dt><span>Relationship Manager</span></dt>
+                <dd>
+                    <span>{{deal.relationshipManager}}</span>
+                </dd>
+                <dt><span>Llf</span></dt>
+                <dd>
+                    <span>{{deal.llf}}</span>
+                </dd>
+                <dt><span>Regulatory Approval Required</span></dt>
+                <dd>
+                    <span>{{deal.regulatoryApprovalRequired}}</span>
+                </dd>
+                <dt><span>Regulatory Approval Obtained</span></dt>
+                <dd>
+                    <span>{{deal.regulatoryApprovalObtained}}</span>
+                </dd>
+                <dt><span>Country Of Incorporation</span></dt>
+                <dd>
+                    <span>{{deal.countryOfIncorporation}}</span>
+                </dd>
+                <dt><span>Regulatory Approval Date</span></dt>
+                <dd>
+                    <span>{{deal.regulatoryApprovalDate}}</span>
+                </dd>
+                <dt><span>Deal Description</span></dt>
+                <dd>
+                    <span>{{deal.dealDescription}}</span>
+                </dd>
+                <dt><span>Update Note</span></dt>
+                <dd>
+                    <span>{{deal.updateNote}}</span>
+                </dd>
+                <dt><span>Credit Approval Date</span></dt>
+                <dd>
+                    <span>{{deal.creditApprovalDate}}</span>
+                </dd>
+                <dt><span>Allocation Date</span></dt>
+                <dd>
+                    <span>{{deal.allocationDate}}</span>
+                </dd>
+                <dt><span>Syndication Launch Date</span></dt>
+                <dd>
+                    <span>{{deal.syndicationLaunchDate}}</span>
+                </dd>
+                <dt><span>Commitment Date</span></dt>
+                <dd>
+                    <span>{{deal.commitmentDate}}</span>
+                </dd>
+                <dt><span>Credit Approval Off Risk Date</span></dt>
+                <dd>
+                    <span>{{deal.creditApprovalOffRiskDate}}</span>
+                </dd>
+                <dt><span>Credit Officer</span></dt>
+                <dd>
+                    <span>{{deal.creditOfficer}}</span>
+                </dd>
+                <dt><span>Is Active</span></dt>
+                <dd>
+                    <span>{{deal.isActive}}</span>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <span>{{deal.createdBy}}</span>
+                </dd>
+                <dt><span>Created On</span></dt>
+                <dd>
+                    <span>{{deal.createdOn}}</span>
+                </dd>
+                <dt><span>Updated By</span></dt>
+                <dd>
+                    <span>{{deal.updatedBy}}</span>
+                </dd>
+                <dt><span>Syndication Team Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.syndicationTeamId">
+                        <a [routerLink]="['/ref-syndication-team', deal.syndicationTeamId?.id, 'view']">{{deal.syndicationTeamId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Deal Status Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.dealStatusId">
+                        <a [routerLink]="['/ref-deal-status', deal.dealStatusId?.id, 'view']">{{deal.dealStatusId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Origination Team Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.originationTeamId">
+                        <a [routerLink]="['/ref-origination-team', deal.originationTeamId?.id, 'view']">{{deal.originationTeamId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Recourse To Client Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.recourseToClientId">
+                        <a [routerLink]="['/ref-recourse-to-client', deal.recourseToClientId?.id, 'view']">{{deal.recourseToClientId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Line Of Business Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.lineOfBusinessId">
+                        <a [routerLink]="['/ref-line-of-business', deal.lineOfBusinessId?.id, 'view']">{{deal.lineOfBusinessId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating Crr Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.ratingCrrId">
+                        <a [routerLink]="['/ref-rating-crr', deal.ratingCrrId?.id, 'view']">{{deal.ratingCrrId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating Moodys Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.ratingMoodysId">
+                        <a [routerLink]="['/ref-rating-moodys', deal.ratingMoodysId?.id, 'view']">{{deal.ratingMoodysId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating S And P Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.ratingSAndPId">
+                        <a [routerLink]="['/ref-rating-s-and-p', deal.ratingSAndPId?.id, 'view']">{{deal.ratingSAndPId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating Fitch Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.ratingFitchId">
+                        <a [routerLink]="['/ref-rating-fitch', deal.ratingFitchId?.id, 'view']">{{deal.ratingFitchId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Country Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.countryId">
+                        <a [routerLink]="['/ref-country', deal.countryId?.id, 'view']">{{deal.countryId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Pra Sector Id</span></dt>
+                <dd>
+                    <div *ngIf="deal.praSectorId">
+                        <a [routerLink]="['/ref-pra-sector', deal.praSectorId?.id, 'view']">{{deal.praSectorId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Tranche</span></dt>
+                <dd>
+                    <div *ngIf="deal.tranche">
+                        <a [routerLink]="['/tranche', deal.tranche?.id, 'view']">{{deal.tranche?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/deal', deal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,262 @@
+entity RefSyndicationTeam {
+	refSyndicationTeamId Integer 
+	refSyndicationTeamName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefDealStatus {
+	dealStatusId Integer
+	dealStatusName String
+    creditApprovalStatus String
+    displayOrder Integer
+    displayKey String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefOriginationTeam{
+	originationTeamId Integer
+    originationTeamName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefLineOfBusiness{
+	lineOfBusinessId Integer
+    lineOfBusinessName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefRecourseToClient{
+	recourseToClientId Integer
+    recourseToClientName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefRatingCrr{
+	ratingCrrId Integer
+    ratingCrrName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefRatingMoodys{
+	ratingMoodysId Integer
+    ratingMoodysName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefRatingSAndP{
+	ratingSAndPId Integer
+    ratingSAndPName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity  RefRatingFitch{
+	ratingFitchId Integer
+    ratingFitchName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefCountry{
+	countryId Integer
+    countryName String
+    countryPra String
+    regionPra String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefPraSector{
+	praSectorId Integer
+    praSectorName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity Deal{
+	dealId Integer
+    projectName String
+    clientSponsor String
+    targetAsset String
+    syndicateOwner String
+    dealPipelineId String
+    originationContact String
+    relationshipManager String
+    llf String
+    regulatoryApprovalRequired String
+    regulatoryApprovalObtained String
+    countryOfIncorporation String
+    regulatoryApprovalDate Instant
+    dealDescription String
+    updateNote String
+    creditApprovalDate Instant
+    allocationDate Instant
+    syndicationLaunchDate Instant
+    commitmentDate Instant
+    creditApprovalOffRiskDate Instant
+    creditOfficer String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedBy Instant
+}
+
+relationship OneToOne {
+	Deal{syndicationTeamId} to RefSyndicationTeam
+    Deal{dealStatusId} to RefDealStatus
+    Deal{originationTeamId} to RefOriginationTeam
+    Deal{recourseToClientId} to RefRecourseToClient
+    Deal{lineOfBusinessId} to RefLineOfBusiness
+    Deal{ratingCrrId} to RefRatingCrr
+    Deal{ratingMoodysId} to RefRatingMoodys
+    Deal{ratingSAndPId} to RefRatingSAndP
+    Deal{ratingFitchId} to RefRatingFitch
+    Deal{countryId} to RefCountry
+    Deal{praSectorId} to RefPraSector
+}
+
+entity RefFacilityType{
+	facilityTypeId Integer
+    facilityTypeName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefBookingEntity{
+	bookingEntityId Integer
+    bookingEntityName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefSeniority{
+	seniorityId Integer
+    seniorityName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity RefCovenant{
+	covenantId Integer
+    covenantName String
+    isActive Boolean
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+entity Tranche{
+	trancheId Integer
+    trancheName String
+    fundedDuringSyndication String
+    debtTakeout String
+    tenorYears Integer
+    tenorMonths Integer
+    bridgeTakeoutDate Instant
+    creditApprovedLcymStructure Integer
+    creditApprovedLcymCommit Integer
+    creditApprovedLcymHold Integer
+    finalApprovedLcymStructure Integer
+    finalApprovedLcymCommit Integer
+    finalApprovedLcymHold Integer
+    marketRiskLcymEconomic Integer
+    marketRiskLcymLegal Integer
+    marketRiskLcymSettlement Integer
+    currentBridgeHoldLcym Integer
+    tenorHighYieldBondYears Integer
+    tenorHighYieldBondMonths Integer
+    bondCapRate Integer
+    refMarginRateName String
+    currency String
+    sortOrder Integer
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+relationship OneToOne {
+	Tranche{facilityTypeId} to RefFacilityType
+    Tranche{bookingEntityId} to RefBookingEntity
+    Tranche{seniorityId} to RefSeniority
+    Tranche{covenantId} to RefCovenant
+    Tranche{ratingMoodysId} to RefRatingMoodys
+    Tranche{ratingSAndPId} to RefRatingSAndP
+    Tranche{ratingFitchId} to RefRatingFitch
+}
+
+relationship OneToMany{
+	Tranche{dealId} to Deal
+}
+
+entity TrancheMargin{
+	trancheMarginId Integer
+    marginSpreadBps String
+    floorPercentage Integer
+    interestPaymentFrequency String
+    totalPricingFlexBpsPa String
+    underwriteFeesBps Integer
+    participationFees Integer
+    extensionFees6Months Integer
+    extensionFees6To12Months Integer
+    otherFlex String 
+    createdBy String
+    createdOn Instant
+    updatedBy String 
+    updatedOn Instant
+}
+
+relationship OneToOne {
+	TrancheMargin{trancheId} to Tranche
+}

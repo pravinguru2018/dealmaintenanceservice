@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Tranche.
+    -->
+    <changeSet id="20181210193122-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="facility_type_id_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_facility_type_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_facility_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="booking_entity_id_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_booking_entity_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_booking_entity"/>
+
+        <addForeignKeyConstraint baseColumnNames="seniority_id_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_seniority_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_seniority"/>
+
+        <addForeignKeyConstraint baseColumnNames="covenant_id_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_covenant_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_covenant"/>
+
+        <addForeignKeyConstraint baseColumnNames="rating_moodys_id_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_rating_moodys_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_moodys"/>
+
+        <addForeignKeyConstraint baseColumnNames="ratingsandpid_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_ratingsandpid_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_s_and_p"/>
+
+        <addForeignKeyConstraint baseColumnNames="rating_fitch_id_id"
+                                 baseTableName="tranche"
+                                 constraintName="fk_tranche_rating_fitch_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ref_rating_fitch"/>
+
+    </changeSet>
+</databaseChangeLog>

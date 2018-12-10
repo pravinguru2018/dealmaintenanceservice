@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-tranche-margin-heading">Create or edit a Tranche Margin</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!trancheMargin.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="trancheMargin.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_trancheMarginId">Tranche Margin Id</label>
+                    <input type="number" class="form-control" name="trancheMarginId" id="field_trancheMarginId"
+                        [(ngModel)]="trancheMargin.trancheMarginId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_marginSpreadBps">Margin Spread Bps</label>
+                    <input type="text" class="form-control" name="marginSpreadBps" id="field_marginSpreadBps"
+                        [(ngModel)]="trancheMargin.marginSpreadBps" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_floorPercentage">Floor Percentage</label>
+                    <input type="number" class="form-control" name="floorPercentage" id="field_floorPercentage"
+                        [(ngModel)]="trancheMargin.floorPercentage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_interestPaymentFrequency">Interest Payment Frequency</label>
+                    <input type="text" class="form-control" name="interestPaymentFrequency" id="field_interestPaymentFrequency"
+                        [(ngModel)]="trancheMargin.interestPaymentFrequency" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_totalPricingFlexBpsPa">Total Pricing Flex Bps Pa</label>
+                    <input type="text" class="form-control" name="totalPricingFlexBpsPa" id="field_totalPricingFlexBpsPa"
+                        [(ngModel)]="trancheMargin.totalPricingFlexBpsPa" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_underwriteFeesBps">Underwrite Fees Bps</label>
+                    <input type="number" class="form-control" name="underwriteFeesBps" id="field_underwriteFeesBps"
+                        [(ngModel)]="trancheMargin.underwriteFeesBps" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_participationFees">Participation Fees</label>
+                    <input type="number" class="form-control" name="participationFees" id="field_participationFees"
+                        [(ngModel)]="trancheMargin.participationFees" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_extensionFees6Months">Extension Fees 6 Months</label>
+                    <input type="number" class="form-control" name="extensionFees6Months" id="field_extensionFees6Months"
+                        [(ngModel)]="trancheMargin.extensionFees6Months" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_extensionFees6To12Months">Extension Fees 6 To 12 Months</label>
+                    <input type="number" class="form-control" name="extensionFees6To12Months" id="field_extensionFees6To12Months"
+                        [(ngModel)]="trancheMargin.extensionFees6To12Months" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_otherFlex">Other Flex</label>
+                    <input type="text" class="form-control" name="otherFlex" id="field_otherFlex"
+                        [(ngModel)]="trancheMargin.otherFlex" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                        [(ngModel)]="trancheMargin.createdBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdOn">Created On</label>
+                    <div class="d-flex">
+                        <input id="field_createdOn" type="datetime-local" class="form-control" name="createdOn" [(ngModel)]="createdOn"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedBy">Updated By</label>
+                    <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                        [(ngModel)]="trancheMargin.updatedBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedOn">Updated On</label>
+                    <div class="d-flex">
+                        <input id="field_updatedOn" type="datetime-local" class="form-control" name="updatedOn" [(ngModel)]="updatedOn"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_trancheId">Tranche Id</label>
+                    <select class="form-control" id="field_trancheId" name="trancheId" [(ngModel)]="trancheMargin.trancheId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="trancheOption.id === trancheMargin.trancheId?.id ? trancheMargin.trancheId : trancheOption" *ngFor="let trancheOption of trancheids; trackBy: trackTrancheById">{{trancheOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+{
+    "name": "TrancheMargin",
+    "fields": [
+        {
+            "fieldName": "trancheMarginId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "marginSpreadBps",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "floorPercentage",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "interestPaymentFrequency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalPricingFlexBpsPa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "underwriteFeesBps",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "participationFees",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "extensionFees6Months",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "extensionFees6To12Months",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "otherFlex",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedOn",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "trancheId",
+            "otherEntityName": "tranche",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trancheMargin"
+        }
+    ],
+    "changelogDate": "20181210193123",
+    "entityTableName": "tranche_margin",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
