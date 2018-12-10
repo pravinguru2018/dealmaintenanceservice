@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span>Ref Countries</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ref-country" [routerLink]="['/ref-country/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Ref Country
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="refCountries">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Country Id</span></th>
+            <th><span>Country Name</span></th>
+            <th><span>Country Pra</span></th>
+            <th><span>Region Pra</span></th>
+            <th><span>Is Active</span></th>
+            <th><span>Created By</span></th>
+            <th><span>Created On</span></th>
+            <th><span>Updated By</span></th>
+            <th><span>Updated On</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let refCountry of refCountries ;trackBy: trackId">
+                <td><a [routerLink]="['/ref-country', refCountry.id, 'view' ]">{{refCountry.id}}</a></td>
+                <td>{{refCountry.countryId}}</td>
+                <td>{{refCountry.countryName}}</td>
+                <td>{{refCountry.countryPra}}</td>
+                <td>{{refCountry.regionPra}}</td>
+                <td>{{refCountry.isActive}}</td>
+                <td>{{refCountry.createdBy}}</td>
+                <td>{{refCountry.createdOn | date:'medium'}}</td>
+                <td>{{refCountry.updatedBy}}</td>
+                <td>{{refCountry.updatedOn | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/ref-country', refCountry.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ref-country', refCountry.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'ref-country/'+ refCountry.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

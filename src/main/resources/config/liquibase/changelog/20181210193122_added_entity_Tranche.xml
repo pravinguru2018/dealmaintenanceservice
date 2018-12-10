@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Tranche.
+    -->
+    <changeSet id="20181210193122-1" author="jhipster">
+        <createTable tableName="tranche">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="tranche_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tranche_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="funded_during_syndication" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="debt_takeout" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tenor_years" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tenor_months" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bridge_takeout_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credit_approved_lcym_structure" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credit_approved_lcym_commit" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credit_approved_lcym_hold" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="final_approved_lcym_structure" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="final_approved_lcym_commit" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="final_approved_lcym_hold" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="market_risk_lcym_economic" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="market_risk_lcym_legal" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="market_risk_lcym_settlement" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="current_bridge_hold_lcym" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tenor_high_yield_bond_years" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tenor_high_yield_bond_months" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="bond_cap_rate" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ref_margin_rate_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sort_order" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_on" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="updated_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="updated_on" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="facility_type_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_facility_type_id_id" />
+            </column>            <column name="booking_entity_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_booking_entity_id_id" />
+            </column>            <column name="seniority_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_seniority_id_id" />
+            </column>            <column name="covenant_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_covenant_id_id" />
+            </column>            <column name="rating_moodys_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_rating_moodys_id_id" />
+            </column>            <column name="ratingsandpid_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_ratingsandpid_id" />
+            </column>            <column name="rating_fitch_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_tranche_rating_fitch_id_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="tranche" columnName="bridge_takeout_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tranche" columnName="created_on" columnDataType="datetime"/>
+        <dropDefaultValue tableName="tranche" columnName="updated_on" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

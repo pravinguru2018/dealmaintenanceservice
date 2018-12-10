@@ -1,0 +1,210 @@
+{
+    "name": "Deal",
+    "fields": [
+        {
+            "fieldName": "dealId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "projectName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clientSponsor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetAsset",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "syndicateOwner",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dealPipelineId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "originationContact",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "relationshipManager",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "llf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regulatoryApprovalRequired",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regulatoryApprovalObtained",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryOfIncorporation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regulatoryApprovalDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dealDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateNote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creditApprovalDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "allocationDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "syndicationLaunchDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "commitmentDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "creditApprovalOffRiskDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "creditOfficer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updatedBy",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "syndicationTeamId",
+            "otherEntityName": "refSyndicationTeam",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "dealStatusId",
+            "otherEntityName": "refDealStatus",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "originationTeamId",
+            "otherEntityName": "refOriginationTeam",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recourseToClientId",
+            "otherEntityName": "refRecourseToClient",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "lineOfBusinessId",
+            "otherEntityName": "refLineOfBusiness",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingCrrId",
+            "otherEntityName": "refRatingCrr",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingMoodysId",
+            "otherEntityName": "refRatingMoodys",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingSAndPId",
+            "otherEntityName": "refRatingSAndP",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingFitchId",
+            "otherEntityName": "refRatingFitch",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "countryId",
+            "otherEntityName": "refCountry",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "praSectorId",
+            "otherEntityName": "refPraSector",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "deal"
+        },
+        {
+            "relationshipName": "tranche",
+            "otherEntityName": "tranche",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181210193117",
+    "entityTableName": "deal",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

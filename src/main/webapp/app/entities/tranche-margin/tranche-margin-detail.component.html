@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="trancheMargin">
+            <h2><span>Tranche Margin</span> {{trancheMargin.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tranche Margin Id</span></dt>
+                <dd>
+                    <span>{{trancheMargin.trancheMarginId}}</span>
+                </dd>
+                <dt><span>Margin Spread Bps</span></dt>
+                <dd>
+                    <span>{{trancheMargin.marginSpreadBps}}</span>
+                </dd>
+                <dt><span>Floor Percentage</span></dt>
+                <dd>
+                    <span>{{trancheMargin.floorPercentage}}</span>
+                </dd>
+                <dt><span>Interest Payment Frequency</span></dt>
+                <dd>
+                    <span>{{trancheMargin.interestPaymentFrequency}}</span>
+                </dd>
+                <dt><span>Total Pricing Flex Bps Pa</span></dt>
+                <dd>
+                    <span>{{trancheMargin.totalPricingFlexBpsPa}}</span>
+                </dd>
+                <dt><span>Underwrite Fees Bps</span></dt>
+                <dd>
+                    <span>{{trancheMargin.underwriteFeesBps}}</span>
+                </dd>
+                <dt><span>Participation Fees</span></dt>
+                <dd>
+                    <span>{{trancheMargin.participationFees}}</span>
+                </dd>
+                <dt><span>Extension Fees 6 Months</span></dt>
+                <dd>
+                    <span>{{trancheMargin.extensionFees6Months}}</span>
+                </dd>
+                <dt><span>Extension Fees 6 To 12 Months</span></dt>
+                <dd>
+                    <span>{{trancheMargin.extensionFees6To12Months}}</span>
+                </dd>
+                <dt><span>Other Flex</span></dt>
+                <dd>
+                    <span>{{trancheMargin.otherFlex}}</span>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <span>{{trancheMargin.createdBy}}</span>
+                </dd>
+                <dt><span>Created On</span></dt>
+                <dd>
+                    <span>{{trancheMargin.createdOn}}</span>
+                </dd>
+                <dt><span>Updated By</span></dt>
+                <dd>
+                    <span>{{trancheMargin.updatedBy}}</span>
+                </dd>
+                <dt><span>Updated On</span></dt>
+                <dd>
+                    <span>{{trancheMargin.updatedOn}}</span>
+                </dd>
+                <dt><span>Tranche Id</span></dt>
+                <dd>
+                    <div *ngIf="trancheMargin.trancheId">
+                        <a [routerLink]="['/tranche', trancheMargin.trancheId?.id, 'view']">{{trancheMargin.trancheId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tranche-margin', trancheMargin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

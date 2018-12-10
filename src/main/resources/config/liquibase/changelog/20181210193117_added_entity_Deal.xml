@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Deal.
+    -->
+    <changeSet id="20181210193117-1" author="jhipster">
+        <createTable tableName="deal">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="deal_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="project_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="client_sponsor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="target_asset" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="syndicate_owner" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="deal_pipeline_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="origination_contact" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="relationship_manager" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="llf" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="regulatory_approval_required" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="regulatory_approval_obtained" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="country_of_incorporation" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="regulatory_approval_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="deal_description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="update_note" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credit_approval_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="allocation_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="syndication_launch_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="commitment_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credit_approval_off_risk_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credit_officer" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="is_active" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_on" type="datetime">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="updated_by" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="syndication_team_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_syndication_team_id_id" />
+            </column>            <column name="deal_status_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_deal_status_id_id" />
+            </column>            <column name="origination_team_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_origination_team_id_id" />
+            </column>            <column name="recourse_to_client_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_recourse_to_client_id_id" />
+            </column>            <column name="line_of_business_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_line_of_business_id_id" />
+            </column>            <column name="rating_crr_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_rating_crr_id_id" />
+            </column>            <column name="rating_moodys_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_rating_moodys_id_id" />
+            </column>            <column name="ratingsandpid_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_ratingsandpid_id" />
+            </column>            <column name="rating_fitch_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_rating_fitch_id_id" />
+            </column>            <column name="country_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_country_id_id" />
+            </column>            <column name="pra_sector_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_deal_pra_sector_id_id" />
+            </column>
+            <column name="tranche_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="deal" columnName="regulatory_approval_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="credit_approval_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="allocation_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="syndication_launch_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="commitment_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="credit_approval_off_risk_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="created_on" columnDataType="datetime"/>
+        <dropDefaultValue tableName="deal" columnName="updated_by" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

@@ -1,0 +1,173 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tranche">
+            <h2><span>Tranche</span> {{tranche.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Tranche Id</span></dt>
+                <dd>
+                    <span>{{tranche.trancheId}}</span>
+                </dd>
+                <dt><span>Tranche Name</span></dt>
+                <dd>
+                    <span>{{tranche.trancheName}}</span>
+                </dd>
+                <dt><span>Funded During Syndication</span></dt>
+                <dd>
+                    <span>{{tranche.fundedDuringSyndication}}</span>
+                </dd>
+                <dt><span>Debt Takeout</span></dt>
+                <dd>
+                    <span>{{tranche.debtTakeout}}</span>
+                </dd>
+                <dt><span>Tenor Years</span></dt>
+                <dd>
+                    <span>{{tranche.tenorYears}}</span>
+                </dd>
+                <dt><span>Tenor Months</span></dt>
+                <dd>
+                    <span>{{tranche.tenorMonths}}</span>
+                </dd>
+                <dt><span>Bridge Takeout Date</span></dt>
+                <dd>
+                    <span>{{tranche.bridgeTakeoutDate}}</span>
+                </dd>
+                <dt><span>Credit Approved Lcym Structure</span></dt>
+                <dd>
+                    <span>{{tranche.creditApprovedLcymStructure}}</span>
+                </dd>
+                <dt><span>Credit Approved Lcym Commit</span></dt>
+                <dd>
+                    <span>{{tranche.creditApprovedLcymCommit}}</span>
+                </dd>
+                <dt><span>Credit Approved Lcym Hold</span></dt>
+                <dd>
+                    <span>{{tranche.creditApprovedLcymHold}}</span>
+                </dd>
+                <dt><span>Final Approved Lcym Structure</span></dt>
+                <dd>
+                    <span>{{tranche.finalApprovedLcymStructure}}</span>
+                </dd>
+                <dt><span>Final Approved Lcym Commit</span></dt>
+                <dd>
+                    <span>{{tranche.finalApprovedLcymCommit}}</span>
+                </dd>
+                <dt><span>Final Approved Lcym Hold</span></dt>
+                <dd>
+                    <span>{{tranche.finalApprovedLcymHold}}</span>
+                </dd>
+                <dt><span>Market Risk Lcym Economic</span></dt>
+                <dd>
+                    <span>{{tranche.marketRiskLcymEconomic}}</span>
+                </dd>
+                <dt><span>Market Risk Lcym Legal</span></dt>
+                <dd>
+                    <span>{{tranche.marketRiskLcymLegal}}</span>
+                </dd>
+                <dt><span>Market Risk Lcym Settlement</span></dt>
+                <dd>
+                    <span>{{tranche.marketRiskLcymSettlement}}</span>
+                </dd>
+                <dt><span>Current Bridge Hold Lcym</span></dt>
+                <dd>
+                    <span>{{tranche.currentBridgeHoldLcym}}</span>
+                </dd>
+                <dt><span>Tenor High Yield Bond Years</span></dt>
+                <dd>
+                    <span>{{tranche.tenorHighYieldBondYears}}</span>
+                </dd>
+                <dt><span>Tenor High Yield Bond Months</span></dt>
+                <dd>
+                    <span>{{tranche.tenorHighYieldBondMonths}}</span>
+                </dd>
+                <dt><span>Bond Cap Rate</span></dt>
+                <dd>
+                    <span>{{tranche.bondCapRate}}</span>
+                </dd>
+                <dt><span>Ref Margin Rate Name</span></dt>
+                <dd>
+                    <span>{{tranche.refMarginRateName}}</span>
+                </dd>
+                <dt><span>Currency</span></dt>
+                <dd>
+                    <span>{{tranche.currency}}</span>
+                </dd>
+                <dt><span>Sort Order</span></dt>
+                <dd>
+                    <span>{{tranche.sortOrder}}</span>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <span>{{tranche.createdBy}}</span>
+                </dd>
+                <dt><span>Created On</span></dt>
+                <dd>
+                    <span>{{tranche.createdOn}}</span>
+                </dd>
+                <dt><span>Updated By</span></dt>
+                <dd>
+                    <span>{{tranche.updatedBy}}</span>
+                </dd>
+                <dt><span>Updated On</span></dt>
+                <dd>
+                    <span>{{tranche.updatedOn}}</span>
+                </dd>
+                <dt><span>Facility Type Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.facilityTypeId">
+                        <a [routerLink]="['/ref-facility-type', tranche.facilityTypeId?.id, 'view']">{{tranche.facilityTypeId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Booking Entity Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.bookingEntityId">
+                        <a [routerLink]="['/ref-booking-entity', tranche.bookingEntityId?.id, 'view']">{{tranche.bookingEntityId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Seniority Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.seniorityId">
+                        <a [routerLink]="['/ref-seniority', tranche.seniorityId?.id, 'view']">{{tranche.seniorityId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Covenant Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.covenantId">
+                        <a [routerLink]="['/ref-covenant', tranche.covenantId?.id, 'view']">{{tranche.covenantId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating Moodys Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.ratingMoodysId">
+                        <a [routerLink]="['/ref-rating-moodys', tranche.ratingMoodysId?.id, 'view']">{{tranche.ratingMoodysId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating S And P Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.ratingSAndPId">
+                        <a [routerLink]="['/ref-rating-s-and-p', tranche.ratingSAndPId?.id, 'view']">{{tranche.ratingSAndPId?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Rating Fitch Id</span></dt>
+                <dd>
+                    <div *ngIf="tranche.ratingFitchId">
+                        <a [routerLink]="['/ref-rating-fitch', tranche.ratingFitchId?.id, 'view']">{{tranche.ratingFitchId?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tranche', tranche.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

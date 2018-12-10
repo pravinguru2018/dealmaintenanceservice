@@ -1,0 +1,249 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-deal-heading">Create or edit a Deal</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!deal.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="deal.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dealId">Deal Id</label>
+                    <input type="number" class="form-control" name="dealId" id="field_dealId"
+                        [(ngModel)]="deal.dealId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_projectName">Project Name</label>
+                    <input type="text" class="form-control" name="projectName" id="field_projectName"
+                        [(ngModel)]="deal.projectName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_clientSponsor">Client Sponsor</label>
+                    <input type="text" class="form-control" name="clientSponsor" id="field_clientSponsor"
+                        [(ngModel)]="deal.clientSponsor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_targetAsset">Target Asset</label>
+                    <input type="text" class="form-control" name="targetAsset" id="field_targetAsset"
+                        [(ngModel)]="deal.targetAsset" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syndicateOwner">Syndicate Owner</label>
+                    <input type="text" class="form-control" name="syndicateOwner" id="field_syndicateOwner"
+                        [(ngModel)]="deal.syndicateOwner" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dealPipelineId">Deal Pipeline Id</label>
+                    <input type="text" class="form-control" name="dealPipelineId" id="field_dealPipelineId"
+                        [(ngModel)]="deal.dealPipelineId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_originationContact">Origination Contact</label>
+                    <input type="text" class="form-control" name="originationContact" id="field_originationContact"
+                        [(ngModel)]="deal.originationContact" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_relationshipManager">Relationship Manager</label>
+                    <input type="text" class="form-control" name="relationshipManager" id="field_relationshipManager"
+                        [(ngModel)]="deal.relationshipManager" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_llf">Llf</label>
+                    <input type="text" class="form-control" name="llf" id="field_llf"
+                        [(ngModel)]="deal.llf" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_regulatoryApprovalRequired">Regulatory Approval Required</label>
+                    <input type="text" class="form-control" name="regulatoryApprovalRequired" id="field_regulatoryApprovalRequired"
+                        [(ngModel)]="deal.regulatoryApprovalRequired" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_regulatoryApprovalObtained">Regulatory Approval Obtained</label>
+                    <input type="text" class="form-control" name="regulatoryApprovalObtained" id="field_regulatoryApprovalObtained"
+                        [(ngModel)]="deal.regulatoryApprovalObtained" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_countryOfIncorporation">Country Of Incorporation</label>
+                    <input type="text" class="form-control" name="countryOfIncorporation" id="field_countryOfIncorporation"
+                        [(ngModel)]="deal.countryOfIncorporation" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_regulatoryApprovalDate">Regulatory Approval Date</label>
+                    <div class="d-flex">
+                        <input id="field_regulatoryApprovalDate" type="datetime-local" class="form-control" name="regulatoryApprovalDate" [(ngModel)]="regulatoryApprovalDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dealDescription">Deal Description</label>
+                    <input type="text" class="form-control" name="dealDescription" id="field_dealDescription"
+                        [(ngModel)]="deal.dealDescription" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updateNote">Update Note</label>
+                    <input type="text" class="form-control" name="updateNote" id="field_updateNote"
+                        [(ngModel)]="deal.updateNote" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_creditApprovalDate">Credit Approval Date</label>
+                    <div class="d-flex">
+                        <input id="field_creditApprovalDate" type="datetime-local" class="form-control" name="creditApprovalDate" [(ngModel)]="creditApprovalDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_allocationDate">Allocation Date</label>
+                    <div class="d-flex">
+                        <input id="field_allocationDate" type="datetime-local" class="form-control" name="allocationDate" [(ngModel)]="allocationDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syndicationLaunchDate">Syndication Launch Date</label>
+                    <div class="d-flex">
+                        <input id="field_syndicationLaunchDate" type="datetime-local" class="form-control" name="syndicationLaunchDate" [(ngModel)]="syndicationLaunchDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_commitmentDate">Commitment Date</label>
+                    <div class="d-flex">
+                        <input id="field_commitmentDate" type="datetime-local" class="form-control" name="commitmentDate" [(ngModel)]="commitmentDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_creditApprovalOffRiskDate">Credit Approval Off Risk Date</label>
+                    <div class="d-flex">
+                        <input id="field_creditApprovalOffRiskDate" type="datetime-local" class="form-control" name="creditApprovalOffRiskDate" [(ngModel)]="creditApprovalOffRiskDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_creditOfficer">Credit Officer</label>
+                    <input type="text" class="form-control" name="creditOfficer" id="field_creditOfficer"
+                        [(ngModel)]="deal.creditOfficer" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_isActive">Is Active</label>
+                    <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                        [(ngModel)]="deal.isActive" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                        [(ngModel)]="deal.createdBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdOn">Created On</label>
+                    <div class="d-flex">
+                        <input id="field_createdOn" type="datetime-local" class="form-control" name="createdOn" [(ngModel)]="createdOn"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedBy">Updated By</label>
+                    <div class="d-flex">
+                        <input id="field_updatedBy" type="datetime-local" class="form-control" name="updatedBy" [(ngModel)]="updatedBy"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_syndicationTeamId">Syndication Team Id</label>
+                    <select class="form-control" id="field_syndicationTeamId" name="syndicationTeamId" [(ngModel)]="deal.syndicationTeamId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refSyndicationTeamOption.id === deal.syndicationTeamId?.id ? deal.syndicationTeamId : refSyndicationTeamOption" *ngFor="let refSyndicationTeamOption of syndicationteamids; trackBy: trackRefSyndicationTeamById">{{refSyndicationTeamOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dealStatusId">Deal Status Id</label>
+                    <select class="form-control" id="field_dealStatusId" name="dealStatusId" [(ngModel)]="deal.dealStatusId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refDealStatusOption.id === deal.dealStatusId?.id ? deal.dealStatusId : refDealStatusOption" *ngFor="let refDealStatusOption of dealstatusids; trackBy: trackRefDealStatusById">{{refDealStatusOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_originationTeamId">Origination Team Id</label>
+                    <select class="form-control" id="field_originationTeamId" name="originationTeamId" [(ngModel)]="deal.originationTeamId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refOriginationTeamOption.id === deal.originationTeamId?.id ? deal.originationTeamId : refOriginationTeamOption" *ngFor="let refOriginationTeamOption of originationteamids; trackBy: trackRefOriginationTeamById">{{refOriginationTeamOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_recourseToClientId">Recourse To Client Id</label>
+                    <select class="form-control" id="field_recourseToClientId" name="recourseToClientId" [(ngModel)]="deal.recourseToClientId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRecourseToClientOption.id === deal.recourseToClientId?.id ? deal.recourseToClientId : refRecourseToClientOption" *ngFor="let refRecourseToClientOption of recoursetoclientids; trackBy: trackRefRecourseToClientById">{{refRecourseToClientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lineOfBusinessId">Line Of Business Id</label>
+                    <select class="form-control" id="field_lineOfBusinessId" name="lineOfBusinessId" [(ngModel)]="deal.lineOfBusinessId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refLineOfBusinessOption.id === deal.lineOfBusinessId?.id ? deal.lineOfBusinessId : refLineOfBusinessOption" *ngFor="let refLineOfBusinessOption of lineofbusinessids; trackBy: trackRefLineOfBusinessById">{{refLineOfBusinessOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingCrrId">Rating Crr Id</label>
+                    <select class="form-control" id="field_ratingCrrId" name="ratingCrrId" [(ngModel)]="deal.ratingCrrId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingCrrOption.id === deal.ratingCrrId?.id ? deal.ratingCrrId : refRatingCrrOption" *ngFor="let refRatingCrrOption of ratingcrrids; trackBy: trackRefRatingCrrById">{{refRatingCrrOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingMoodysId">Rating Moodys Id</label>
+                    <select class="form-control" id="field_ratingMoodysId" name="ratingMoodysId" [(ngModel)]="deal.ratingMoodysId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingMoodysOption.id === deal.ratingMoodysId?.id ? deal.ratingMoodysId : refRatingMoodysOption" *ngFor="let refRatingMoodysOption of ratingmoodysids; trackBy: trackRefRatingMoodysById">{{refRatingMoodysOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingSAndPId">Rating S And P Id</label>
+                    <select class="form-control" id="field_ratingSAndPId" name="ratingSAndPId" [(ngModel)]="deal.ratingSAndPId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingSAndPOption.id === deal.ratingSAndPId?.id ? deal.ratingSAndPId : refRatingSAndPOption" *ngFor="let refRatingSAndPOption of ratingsandpids; trackBy: trackRefRatingSAndPById">{{refRatingSAndPOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingFitchId">Rating Fitch Id</label>
+                    <select class="form-control" id="field_ratingFitchId" name="ratingFitchId" [(ngModel)]="deal.ratingFitchId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingFitchOption.id === deal.ratingFitchId?.id ? deal.ratingFitchId : refRatingFitchOption" *ngFor="let refRatingFitchOption of ratingfitchids; trackBy: trackRefRatingFitchById">{{refRatingFitchOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_countryId">Country Id</label>
+                    <select class="form-control" id="field_countryId" name="countryId" [(ngModel)]="deal.countryId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refCountryOption.id === deal.countryId?.id ? deal.countryId : refCountryOption" *ngFor="let refCountryOption of countryids; trackBy: trackRefCountryById">{{refCountryOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_praSectorId">Pra Sector Id</label>
+                    <select class="form-control" id="field_praSectorId" name="praSectorId" [(ngModel)]="deal.praSectorId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refPraSectorOption.id === deal.praSectorId?.id ? deal.praSectorId : refPraSectorOption" *ngFor="let refPraSectorOption of prasectorids; trackBy: trackRefPraSectorById">{{refPraSectorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tranche">Tranche</label>
+                    <select class="form-control" id="field_tranche" name="tranche" [(ngModel)]="deal.tranche" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="trancheOption.id === deal.tranche?.id ? deal.tranche : trancheOption" *ngFor="let trancheOption of tranches; trackBy: trackTrancheById">{{trancheOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span>Tranche Margins</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tranche-margin" [routerLink]="['/tranche-margin/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Tranche Margin
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="trancheMargins">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Tranche Margin Id</span></th>
+            <th><span>Margin Spread Bps</span></th>
+            <th><span>Floor Percentage</span></th>
+            <th><span>Interest Payment Frequency</span></th>
+            <th><span>Total Pricing Flex Bps Pa</span></th>
+            <th><span>Underwrite Fees Bps</span></th>
+            <th><span>Participation Fees</span></th>
+            <th><span>Extension Fees 6 Months</span></th>
+            <th><span>Extension Fees 6 To 12 Months</span></th>
+            <th><span>Other Flex</span></th>
+            <th><span>Created By</span></th>
+            <th><span>Created On</span></th>
+            <th><span>Updated By</span></th>
+            <th><span>Updated On</span></th>
+            <th><span>Tranche Id</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let trancheMargin of trancheMargins ;trackBy: trackId">
+                <td><a [routerLink]="['/tranche-margin', trancheMargin.id, 'view' ]">{{trancheMargin.id}}</a></td>
+                <td>{{trancheMargin.trancheMarginId}}</td>
+                <td>{{trancheMargin.marginSpreadBps}}</td>
+                <td>{{trancheMargin.floorPercentage}}</td>
+                <td>{{trancheMargin.interestPaymentFrequency}}</td>
+                <td>{{trancheMargin.totalPricingFlexBpsPa}}</td>
+                <td>{{trancheMargin.underwriteFeesBps}}</td>
+                <td>{{trancheMargin.participationFees}}</td>
+                <td>{{trancheMargin.extensionFees6Months}}</td>
+                <td>{{trancheMargin.extensionFees6To12Months}}</td>
+                <td>{{trancheMargin.otherFlex}}</td>
+                <td>{{trancheMargin.createdBy}}</td>
+                <td>{{trancheMargin.createdOn | date:'medium'}}</td>
+                <td>{{trancheMargin.updatedBy}}</td>
+                <td>{{trancheMargin.updatedOn | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="trancheMargin.trancheId">
+                        <a [routerLink]="['../tranche', trancheMargin.trancheId?.id, 'view' ]" >{{trancheMargin.trancheId?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/tranche-margin', trancheMargin.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tranche-margin', trancheMargin.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tranche-margin/'+ trancheMargin.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,214 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-tranche-heading">Create or edit a Tranche</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!tranche.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="tranche.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_trancheId">Tranche Id</label>
+                    <input type="number" class="form-control" name="trancheId" id="field_trancheId"
+                        [(ngModel)]="tranche.trancheId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_trancheName">Tranche Name</label>
+                    <input type="text" class="form-control" name="trancheName" id="field_trancheName"
+                        [(ngModel)]="tranche.trancheName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_fundedDuringSyndication">Funded During Syndication</label>
+                    <input type="text" class="form-control" name="fundedDuringSyndication" id="field_fundedDuringSyndication"
+                        [(ngModel)]="tranche.fundedDuringSyndication" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_debtTakeout">Debt Takeout</label>
+                    <input type="text" class="form-control" name="debtTakeout" id="field_debtTakeout"
+                        [(ngModel)]="tranche.debtTakeout" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenorYears">Tenor Years</label>
+                    <input type="number" class="form-control" name="tenorYears" id="field_tenorYears"
+                        [(ngModel)]="tranche.tenorYears" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenorMonths">Tenor Months</label>
+                    <input type="number" class="form-control" name="tenorMonths" id="field_tenorMonths"
+                        [(ngModel)]="tranche.tenorMonths" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bridgeTakeoutDate">Bridge Takeout Date</label>
+                    <div class="d-flex">
+                        <input id="field_bridgeTakeoutDate" type="datetime-local" class="form-control" name="bridgeTakeoutDate" [(ngModel)]="bridgeTakeoutDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_creditApprovedLcymStructure">Credit Approved Lcym Structure</label>
+                    <input type="number" class="form-control" name="creditApprovedLcymStructure" id="field_creditApprovedLcymStructure"
+                        [(ngModel)]="tranche.creditApprovedLcymStructure" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_creditApprovedLcymCommit">Credit Approved Lcym Commit</label>
+                    <input type="number" class="form-control" name="creditApprovedLcymCommit" id="field_creditApprovedLcymCommit"
+                        [(ngModel)]="tranche.creditApprovedLcymCommit" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_creditApprovedLcymHold">Credit Approved Lcym Hold</label>
+                    <input type="number" class="form-control" name="creditApprovedLcymHold" id="field_creditApprovedLcymHold"
+                        [(ngModel)]="tranche.creditApprovedLcymHold" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_finalApprovedLcymStructure">Final Approved Lcym Structure</label>
+                    <input type="number" class="form-control" name="finalApprovedLcymStructure" id="field_finalApprovedLcymStructure"
+                        [(ngModel)]="tranche.finalApprovedLcymStructure" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_finalApprovedLcymCommit">Final Approved Lcym Commit</label>
+                    <input type="number" class="form-control" name="finalApprovedLcymCommit" id="field_finalApprovedLcymCommit"
+                        [(ngModel)]="tranche.finalApprovedLcymCommit" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_finalApprovedLcymHold">Final Approved Lcym Hold</label>
+                    <input type="number" class="form-control" name="finalApprovedLcymHold" id="field_finalApprovedLcymHold"
+                        [(ngModel)]="tranche.finalApprovedLcymHold" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_marketRiskLcymEconomic">Market Risk Lcym Economic</label>
+                    <input type="number" class="form-control" name="marketRiskLcymEconomic" id="field_marketRiskLcymEconomic"
+                        [(ngModel)]="tranche.marketRiskLcymEconomic" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_marketRiskLcymLegal">Market Risk Lcym Legal</label>
+                    <input type="number" class="form-control" name="marketRiskLcymLegal" id="field_marketRiskLcymLegal"
+                        [(ngModel)]="tranche.marketRiskLcymLegal" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_marketRiskLcymSettlement">Market Risk Lcym Settlement</label>
+                    <input type="number" class="form-control" name="marketRiskLcymSettlement" id="field_marketRiskLcymSettlement"
+                        [(ngModel)]="tranche.marketRiskLcymSettlement" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_currentBridgeHoldLcym">Current Bridge Hold Lcym</label>
+                    <input type="number" class="form-control" name="currentBridgeHoldLcym" id="field_currentBridgeHoldLcym"
+                        [(ngModel)]="tranche.currentBridgeHoldLcym" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenorHighYieldBondYears">Tenor High Yield Bond Years</label>
+                    <input type="number" class="form-control" name="tenorHighYieldBondYears" id="field_tenorHighYieldBondYears"
+                        [(ngModel)]="tranche.tenorHighYieldBondYears" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tenorHighYieldBondMonths">Tenor High Yield Bond Months</label>
+                    <input type="number" class="form-control" name="tenorHighYieldBondMonths" id="field_tenorHighYieldBondMonths"
+                        [(ngModel)]="tranche.tenorHighYieldBondMonths" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bondCapRate">Bond Cap Rate</label>
+                    <input type="number" class="form-control" name="bondCapRate" id="field_bondCapRate"
+                        [(ngModel)]="tranche.bondCapRate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_refMarginRateName">Ref Margin Rate Name</label>
+                    <input type="text" class="form-control" name="refMarginRateName" id="field_refMarginRateName"
+                        [(ngModel)]="tranche.refMarginRateName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_currency">Currency</label>
+                    <input type="text" class="form-control" name="currency" id="field_currency"
+                        [(ngModel)]="tranche.currency" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sortOrder">Sort Order</label>
+                    <input type="number" class="form-control" name="sortOrder" id="field_sortOrder"
+                        [(ngModel)]="tranche.sortOrder" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                        [(ngModel)]="tranche.createdBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdOn">Created On</label>
+                    <div class="d-flex">
+                        <input id="field_createdOn" type="datetime-local" class="form-control" name="createdOn" [(ngModel)]="createdOn"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedBy">Updated By</label>
+                    <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                        [(ngModel)]="tranche.updatedBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedOn">Updated On</label>
+                    <div class="d-flex">
+                        <input id="field_updatedOn" type="datetime-local" class="form-control" name="updatedOn" [(ngModel)]="updatedOn"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_facilityTypeId">Facility Type Id</label>
+                    <select class="form-control" id="field_facilityTypeId" name="facilityTypeId" [(ngModel)]="tranche.facilityTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refFacilityTypeOption.id === tranche.facilityTypeId?.id ? tranche.facilityTypeId : refFacilityTypeOption" *ngFor="let refFacilityTypeOption of facilitytypeids; trackBy: trackRefFacilityTypeById">{{refFacilityTypeOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bookingEntityId">Booking Entity Id</label>
+                    <select class="form-control" id="field_bookingEntityId" name="bookingEntityId" [(ngModel)]="tranche.bookingEntityId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refBookingEntityOption.id === tranche.bookingEntityId?.id ? tranche.bookingEntityId : refBookingEntityOption" *ngFor="let refBookingEntityOption of bookingentityids; trackBy: trackRefBookingEntityById">{{refBookingEntityOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_seniorityId">Seniority Id</label>
+                    <select class="form-control" id="field_seniorityId" name="seniorityId" [(ngModel)]="tranche.seniorityId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refSeniorityOption.id === tranche.seniorityId?.id ? tranche.seniorityId : refSeniorityOption" *ngFor="let refSeniorityOption of seniorityids; trackBy: trackRefSeniorityById">{{refSeniorityOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_covenantId">Covenant Id</label>
+                    <select class="form-control" id="field_covenantId" name="covenantId" [(ngModel)]="tranche.covenantId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refCovenantOption.id === tranche.covenantId?.id ? tranche.covenantId : refCovenantOption" *ngFor="let refCovenantOption of covenantids; trackBy: trackRefCovenantById">{{refCovenantOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingMoodysId">Rating Moodys Id</label>
+                    <select class="form-control" id="field_ratingMoodysId" name="ratingMoodysId" [(ngModel)]="tranche.ratingMoodysId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingMoodysOption.id === tranche.ratingMoodysId?.id ? tranche.ratingMoodysId : refRatingMoodysOption" *ngFor="let refRatingMoodysOption of ratingmoodysids; trackBy: trackRefRatingMoodysById">{{refRatingMoodysOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingSAndPId">Rating S And P Id</label>
+                    <select class="form-control" id="field_ratingSAndPId" name="ratingSAndPId" [(ngModel)]="tranche.ratingSAndPId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingSAndPOption.id === tranche.ratingSAndPId?.id ? tranche.ratingSAndPId : refRatingSAndPOption" *ngFor="let refRatingSAndPOption of ratingsandpids; trackBy: trackRefRatingSAndPById">{{refRatingSAndPOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ratingFitchId">Rating Fitch Id</label>
+                    <select class="form-control" id="field_ratingFitchId" name="ratingFitchId" [(ngModel)]="tranche.ratingFitchId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="refRatingFitchOption.id === tranche.ratingFitchId?.id ? tranche.ratingFitchId : refRatingFitchOption" *ngFor="let refRatingFitchOption of ratingfitchids; trackBy: trackRefRatingFitchById">{{refRatingFitchOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

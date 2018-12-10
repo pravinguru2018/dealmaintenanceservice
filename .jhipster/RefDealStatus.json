@@ -1,0 +1,55 @@
+{
+    "name": "RefDealStatus",
+    "fields": [
+        {
+            "fieldName": "dealStatusId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dealStatusName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "creditApprovalStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "displayOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "displayKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedOn",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181210193107",
+    "entityTableName": "ref_deal_status",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

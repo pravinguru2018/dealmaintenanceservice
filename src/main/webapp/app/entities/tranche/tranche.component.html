@@ -1,0 +1,148 @@
+<div>
+    <h2 id="page-heading">
+        <span>Tranches</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tranche" [routerLink]="['/tranche/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Tranche
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="tranches">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Tranche Id</span></th>
+            <th><span>Tranche Name</span></th>
+            <th><span>Funded During Syndication</span></th>
+            <th><span>Debt Takeout</span></th>
+            <th><span>Tenor Years</span></th>
+            <th><span>Tenor Months</span></th>
+            <th><span>Bridge Takeout Date</span></th>
+            <th><span>Credit Approved Lcym Structure</span></th>
+            <th><span>Credit Approved Lcym Commit</span></th>
+            <th><span>Credit Approved Lcym Hold</span></th>
+            <th><span>Final Approved Lcym Structure</span></th>
+            <th><span>Final Approved Lcym Commit</span></th>
+            <th><span>Final Approved Lcym Hold</span></th>
+            <th><span>Market Risk Lcym Economic</span></th>
+            <th><span>Market Risk Lcym Legal</span></th>
+            <th><span>Market Risk Lcym Settlement</span></th>
+            <th><span>Current Bridge Hold Lcym</span></th>
+            <th><span>Tenor High Yield Bond Years</span></th>
+            <th><span>Tenor High Yield Bond Months</span></th>
+            <th><span>Bond Cap Rate</span></th>
+            <th><span>Ref Margin Rate Name</span></th>
+            <th><span>Currency</span></th>
+            <th><span>Sort Order</span></th>
+            <th><span>Created By</span></th>
+            <th><span>Created On</span></th>
+            <th><span>Updated By</span></th>
+            <th><span>Updated On</span></th>
+            <th><span>Facility Type Id</span></th>
+            <th><span>Booking Entity Id</span></th>
+            <th><span>Seniority Id</span></th>
+            <th><span>Covenant Id</span></th>
+            <th><span>Rating Moodys Id</span></th>
+            <th><span>Rating S And P Id</span></th>
+            <th><span>Rating Fitch Id</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tranche of tranches ;trackBy: trackId">
+                <td><a [routerLink]="['/tranche', tranche.id, 'view' ]">{{tranche.id}}</a></td>
+                <td>{{tranche.trancheId}}</td>
+                <td>{{tranche.trancheName}}</td>
+                <td>{{tranche.fundedDuringSyndication}}</td>
+                <td>{{tranche.debtTakeout}}</td>
+                <td>{{tranche.tenorYears}}</td>
+                <td>{{tranche.tenorMonths}}</td>
+                <td>{{tranche.bridgeTakeoutDate | date:'medium'}}</td>
+                <td>{{tranche.creditApprovedLcymStructure}}</td>
+                <td>{{tranche.creditApprovedLcymCommit}}</td>
+                <td>{{tranche.creditApprovedLcymHold}}</td>
+                <td>{{tranche.finalApprovedLcymStructure}}</td>
+                <td>{{tranche.finalApprovedLcymCommit}}</td>
+                <td>{{tranche.finalApprovedLcymHold}}</td>
+                <td>{{tranche.marketRiskLcymEconomic}}</td>
+                <td>{{tranche.marketRiskLcymLegal}}</td>
+                <td>{{tranche.marketRiskLcymSettlement}}</td>
+                <td>{{tranche.currentBridgeHoldLcym}}</td>
+                <td>{{tranche.tenorHighYieldBondYears}}</td>
+                <td>{{tranche.tenorHighYieldBondMonths}}</td>
+                <td>{{tranche.bondCapRate}}</td>
+                <td>{{tranche.refMarginRateName}}</td>
+                <td>{{tranche.currency}}</td>
+                <td>{{tranche.sortOrder}}</td>
+                <td>{{tranche.createdBy}}</td>
+                <td>{{tranche.createdOn | date:'medium'}}</td>
+                <td>{{tranche.updatedBy}}</td>
+                <td>{{tranche.updatedOn | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="tranche.facilityTypeId">
+                        <a [routerLink]="['../ref-facility-type', tranche.facilityTypeId?.id, 'view' ]" >{{tranche.facilityTypeId?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tranche.bookingEntityId">
+                        <a [routerLink]="['../ref-booking-entity', tranche.bookingEntityId?.id, 'view' ]" >{{tranche.bookingEntityId?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tranche.seniorityId">
+                        <a [routerLink]="['../ref-seniority', tranche.seniorityId?.id, 'view' ]" >{{tranche.seniorityId?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tranche.covenantId">
+                        <a [routerLink]="['../ref-covenant', tranche.covenantId?.id, 'view' ]" >{{tranche.covenantId?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tranche.ratingMoodysId">
+                        <a [routerLink]="['../ref-rating-moodys', tranche.ratingMoodysId?.id, 'view' ]" >{{tranche.ratingMoodysId?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tranche.ratingSAndPId">
+                        <a [routerLink]="['../ref-rating-s-and-p', tranche.ratingSAndPId?.id, 'view' ]" >{{tranche.ratingSAndPId?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tranche.ratingFitchId">
+                        <a [routerLink]="['../ref-rating-fitch', tranche.ratingFitchId?.id, 'view' ]" >{{tranche.ratingFitchId?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/tranche', tranche.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tranche', tranche.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tranche/'+ tranche.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

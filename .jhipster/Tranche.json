@@ -1,0 +1,186 @@
+{
+    "name": "Tranche",
+    "fields": [
+        {
+            "fieldName": "trancheId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "trancheName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fundedDuringSyndication",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "debtTakeout",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenorYears",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tenorMonths",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bridgeTakeoutDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "creditApprovedLcymStructure",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "creditApprovedLcymCommit",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "creditApprovedLcymHold",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "finalApprovedLcymStructure",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "finalApprovedLcymCommit",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "finalApprovedLcymHold",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "marketRiskLcymEconomic",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "marketRiskLcymLegal",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "marketRiskLcymSettlement",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "currentBridgeHoldLcym",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tenorHighYieldBondYears",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tenorHighYieldBondMonths",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bondCapRate",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "refMarginRateName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedOn",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "facilityTypeId",
+            "otherEntityName": "refFacilityType",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "bookingEntityId",
+            "otherEntityName": "refBookingEntity",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "seniorityId",
+            "otherEntityName": "refSeniority",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "covenantId",
+            "otherEntityName": "refCovenant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingMoodysId",
+            "otherEntityName": "refRatingMoodys",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingSAndPId",
+            "otherEntityName": "refRatingSAndP",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ratingFitchId",
+            "otherEntityName": "refRatingFitch",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tranche"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "dealId",
+            "otherEntityName": "deal",
+            "otherEntityRelationshipName": "tranche"
+        }
+    ],
+    "changelogDate": "20181210193122",
+    "entityTableName": "tranche",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

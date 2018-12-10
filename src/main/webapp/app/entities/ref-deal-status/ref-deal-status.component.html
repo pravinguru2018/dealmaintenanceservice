@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span>Ref Deal Statuses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ref-deal-status" [routerLink]="['/ref-deal-status/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Ref Deal Status
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="refDealStatuses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Deal Status Id</span></th>
+            <th><span>Deal Status Name</span></th>
+            <th><span>Credit Approval Status</span></th>
+            <th><span>Display Order</span></th>
+            <th><span>Display Key</span></th>
+            <th><span>Is Active</span></th>
+            <th><span>Created By</span></th>
+            <th><span>Created On</span></th>
+            <th><span>Updated By</span></th>
+            <th><span>Updated On</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let refDealStatus of refDealStatuses ;trackBy: trackId">
+                <td><a [routerLink]="['/ref-deal-status', refDealStatus.id, 'view' ]">{{refDealStatus.id}}</a></td>
+                <td>{{refDealStatus.dealStatusId}}</td>
+                <td>{{refDealStatus.dealStatusName}}</td>
+                <td>{{refDealStatus.creditApprovalStatus}}</td>
+                <td>{{refDealStatus.displayOrder}}</td>
+                <td>{{refDealStatus.displayKey}}</td>
+                <td>{{refDealStatus.isActive}}</td>
+                <td>{{refDealStatus.createdBy}}</td>
+                <td>{{refDealStatus.createdOn | date:'medium'}}</td>
+                <td>{{refDealStatus.updatedBy}}</td>
+                <td>{{refDealStatus.updatedOn | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/ref-deal-status', refDealStatus.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ref-deal-status', refDealStatus.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'ref-deal-status/'+ refDealStatus.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

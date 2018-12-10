@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span>Ref Line Of Businesses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ref-line-of-business" [routerLink]="['/ref-line-of-business/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Ref Line Of Business
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="refLineOfBusinesses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Line Of Business Id</span></th>
+            <th><span>Line Of Business Name</span></th>
+            <th><span>Is Active</span></th>
+            <th><span>Created By</span></th>
+            <th><span>Created On</span></th>
+            <th><span>Updated By</span></th>
+            <th><span>Updated On</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let refLineOfBusiness of refLineOfBusinesses ;trackBy: trackId">
+                <td><a [routerLink]="['/ref-line-of-business', refLineOfBusiness.id, 'view' ]">{{refLineOfBusiness.id}}</a></td>
+                <td>{{refLineOfBusiness.lineOfBusinessId}}</td>
+                <td>{{refLineOfBusiness.lineOfBusinessName}}</td>
+                <td>{{refLineOfBusiness.isActive}}</td>
+                <td>{{refLineOfBusiness.createdBy}}</td>
+                <td>{{refLineOfBusiness.createdOn | date:'medium'}}</td>
+                <td>{{refLineOfBusiness.updatedBy}}</td>
+                <td>{{refLineOfBusiness.updatedOn | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/ref-line-of-business', refLineOfBusiness.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/ref-line-of-business', refLineOfBusiness.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'ref-line-of-business/'+ refLineOfBusiness.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

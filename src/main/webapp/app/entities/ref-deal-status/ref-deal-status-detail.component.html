@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="refDealStatus">
+            <h2><span>Ref Deal Status</span> {{refDealStatus.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Deal Status Id</span></dt>
+                <dd>
+                    <span>{{refDealStatus.dealStatusId}}</span>
+                </dd>
+                <dt><span>Deal Status Name</span></dt>
+                <dd>
+                    <span>{{refDealStatus.dealStatusName}}</span>
+                </dd>
+                <dt><span>Credit Approval Status</span></dt>
+                <dd>
+                    <span>{{refDealStatus.creditApprovalStatus}}</span>
+                </dd>
+                <dt><span>Display Order</span></dt>
+                <dd>
+                    <span>{{refDealStatus.displayOrder}}</span>
+                </dd>
+                <dt><span>Display Key</span></dt>
+                <dd>
+                    <span>{{refDealStatus.displayKey}}</span>
+                </dd>
+                <dt><span>Is Active</span></dt>
+                <dd>
+                    <span>{{refDealStatus.isActive}}</span>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <span>{{refDealStatus.createdBy}}</span>
+                </dd>
+                <dt><span>Created On</span></dt>
+                <dd>
+                    <span>{{refDealStatus.createdOn}}</span>
+                </dd>
+                <dt><span>Updated By</span></dt>
+                <dd>
+                    <span>{{refDealStatus.updatedBy}}</span>
+                </dd>
+                <dt><span>Updated On</span></dt>
+                <dd>
+                    <span>{{refDealStatus.updatedOn}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ref-deal-status', refDealStatus.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
